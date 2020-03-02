@@ -1,0 +1,6 @@
+{
+  "Timeout": {
+    "ElementVisibility": 5000,
+    "PageLoad": 20000
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "topcoder-ui-testing-lib",
+  "version": "1.0.0",
+  "description": "Topcoder UI Tetsing Library",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "dependencies": {
+    "@types/node": "^12.7.8",
+    "jasmine": "^3.4.0",
+    "jsdom": "^15.1.1",
+    "protractor": "^5.4.2",
+    "typescript": "^3.5.3",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^3.3.16",
+    "@types/jasminewd2": "^2.0.6",
+    "rimraf": "^2.6.3",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0"
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "clean": "rimraf dist",
+    "test": "tslint -p tsconfig.json",
+    "build": "npm run clean && npm run tsc"
+  },
+  "keywords": [
+    "protractor",
+    "jasmine",
+    "typescript"
+  ]
+}
