@@ -1,10 +1,15 @@
 import { browser, protractor } from "protractor";
 import { logger } from "../../../../../logger/logger";
-import { CommonHelper } from "../../../../utils/common-helper";
 import { ElementHelper } from "../../../../utils/element-helper";
-import { HomePageConstants } from "./home.constants";
-
 export class HomePage {
+  public homePageUrl;
+  /**
+   * Set Urls
+   */
+  public async setUrls(urlObject) {
+    this.homePageUrl = urlObject.homePageUrl;
+  }
+
   /**
    * Gets the home page container element
    */
@@ -16,7 +21,7 @@ export class HomePage {
    * Gets the home page
    */
   public async get() {
-    await browser.get(HomePageConstants.url);
+    await browser.get(this.homePageUrl);
     logger.info("User navigated to Home Page");
   }
 }

@@ -244,188 +244,200 @@ app.controller('ScreenshotReportController', function ($scope, $http) {
         "passed": true,
         "pending": false,
         "os": "Mac OS X",
-        "instanceId": 3775,
+        "instanceId": 12212,
         "browser": {
             "name": "chrome",
-            "version": "80.0.3987.116"
+            "version": "80.0.3987.132"
         },
         "message": "Passed.",
         "trace": "",
         "browserLogs": [],
-        "screenShotFile": "screenshots/00a70082-00f3-0009-001b-00c7006c00c5.png",
-        "timestamp": 1582540173463,
-        "duration": 14743
+        "screenShotFile": "screenshots/002500d0-0035-006e-005c-00460059004a.png",
+        "timestamp": 1584264323638,
+        "duration": 22582
     },
     {
         "description": "should Verify User cannot login using invalid username|Topcoder Login Page Tests: ",
         "passed": true,
         "pending": false,
         "os": "Mac OS X",
-        "instanceId": 3775,
+        "instanceId": 12212,
         "browser": {
             "name": "chrome",
-            "version": "80.0.3987.116"
+            "version": "80.0.3987.132"
         },
         "message": "Passed.",
         "trace": "",
         "browserLogs": [],
-        "screenShotFile": "screenshots/009500d6-0075-00db-0047-004500390060.png",
-        "timestamp": 1582540188751,
-        "duration": 3981
+        "screenShotFile": "screenshots/008900a6-00d2-0069-006e-00b600270055.png",
+        "timestamp": 1584264346724,
+        "duration": 5376
     },
     {
         "description": "should Verify User cannot login using invalid password|Topcoder Login Page Tests: ",
         "passed": true,
         "pending": false,
         "os": "Mac OS X",
-        "instanceId": 3775,
+        "instanceId": 12212,
         "browser": {
             "name": "chrome",
-            "version": "80.0.3987.116"
+            "version": "80.0.3987.132"
         },
         "message": "Passed.",
         "trace": "",
         "browserLogs": [],
-        "screenShotFile": "screenshots/00a7008f-003a-0023-00ee-0047005700d7.png",
-        "timestamp": 1582540193288,
-        "duration": 6206
+        "screenShotFile": "screenshots/00560036-0068-00bd-00b3-001300d10007.png",
+        "timestamp": 1584264352589,
+        "duration": 7239
     },
     {
         "description": "should Verify User can logout|Topcoder Login Page Tests: ",
         "passed": true,
         "pending": false,
         "os": "Mac OS X",
-        "instanceId": 3775,
+        "instanceId": 12212,
         "browser": {
             "name": "chrome",
-            "version": "80.0.3987.116"
+            "version": "80.0.3987.132"
         },
         "message": "Passed.",
         "trace": "",
         "browserLogs": [],
-        "screenShotFile": "screenshots/006600a8-002a-0000-00a4-00eb00a900bb.png",
-        "timestamp": 1582540200050,
-        "duration": 9832
+        "screenShotFile": "screenshots/008300ec-0021-0040-00cc-007000ee00e7.png",
+        "timestamp": 1584264360310,
+        "duration": 17439
     },
     {
         "description": "should Verify User can Add/Update/Delete Subscriptions|Topcoder Tools Page Tests: ",
         "passed": true,
         "pending": false,
         "os": "Mac OS X",
-        "instanceId": 3775,
+        "instanceId": 12212,
         "browser": {
             "name": "chrome",
-            "version": "80.0.3987.116"
+            "version": "80.0.3987.132"
         },
         "message": "Passed.",
         "trace": "",
         "browserLogs": [
             {
                 "level": "SEVERE",
-                "message": "https://accounts.topcoder-dev.com/app.29ca52a25fe2b420355c.js 11:4207 \"Warning: It looks like you're using a minified copy of the development build of React. When deploying React apps to production, make sure to use the production build which skips development warnings and is faster. See https://fb.me/react-minification for more details.\"",
-                "timestamp": 1582540213881,
+                "message": "https://accounts.topcoder-dev.com/app.03d6c15a67dc03b43f34.js 11:4207 \"Warning: It looks like you're using a minified copy of the development build of React. When deploying React apps to production, make sure to use the production build which skips development warnings and is faster. See https://fb.me/react-minification for more details.\"",
+                "timestamp": 1584264381300,
                 "type": ""
             },
             {
                 "level": "WARNING",
-                "message": "https://accounts.topcoder-dev.com/app.29ca52a25fe2b420355c.js 47:18175 \"Warning: Accessing createClass via the main React package is deprecated, and will be removed in React v16.0. Use a plain JavaScript class instead. If you're not yet ready to migrate, create-react-class v15.* is available on npm as a temporary, drop-in replacement. For more info see https://fb.me/react-create-class\"",
-                "timestamp": 1582540213885,
+                "message": "https://accounts.topcoder-dev.com/app.03d6c15a67dc03b43f34.js 39:16614 \"Warning: Accessing createClass via the main React package is deprecated, and will be removed in React v16.0. Use a plain JavaScript class instead. If you're not yet ready to migrate, create-react-class v15.* is available on npm as a temporary, drop-in replacement. For more info see https://fb.me/react-create-class\"",
+                "timestamp": 1584264381304,
                 "type": ""
             },
             {
                 "level": "WARNING",
-                "message": "https://accounts.topcoder-dev.com/app.29ca52a25fe2b420355c.js 47:18175 \"Warning: Accessing PropTypes via the main React package is deprecated, and will be removed in  React v16.0. Use the latest available v15.* prop-types package from npm instead. For info on usage, compatibility, migration and more, see https://fb.me/prop-types-docs\"",
-                "timestamp": 1582540213885,
+                "message": "https://accounts.topcoder-dev.com/app.03d6c15a67dc03b43f34.js 39:16614 \"Warning: Accessing PropTypes via the main React package is deprecated, and will be removed in  React v16.0. Use the latest available v15.* prop-types package from npm instead. For info on usage, compatibility, migration and more, see https://fb.me/prop-types-docs\"",
+                "timestamp": 1584264381304,
                 "type": ""
             },
             {
                 "level": "SEVERE",
-                "message": "https://accounts.topcoder-dev.com/app.29ca52a25fe2b420355c.js 436:24688 \"You are currently using minified code outside of NODE_ENV === 'production'. This means that you are running a slower development build of Redux. You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify or DefinePlugin for webpack (http://stackoverflow.com/questions/30030031) to ensure you have the correct code for your production build.\"",
-                "timestamp": 1582540213913,
+                "message": "https://accounts.topcoder-dev.com/app.03d6c15a67dc03b43f34.js 429:28920 \"You are currently using minified code outside of NODE_ENV === 'production'. This means that you are running a slower development build of Redux. You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify or DefinePlugin for webpack (http://stackoverflow.com/questions/30030031) to ensure you have the correct code for your production build.\"",
+                "timestamp": 1584264381393,
                 "type": ""
             },
             {
                 "level": "SEVERE",
                 "message": "https://accounts.topcoder-dev.com/member 0:0 Uncaught (in promise)",
-                "timestamp": 1582540214206,
+                "timestamp": 1584264382031,
                 "type": ""
             },
             {
                 "level": "WARNING",
                 "message": "https://accounts.topcoder-dev.com/member - A cookie associated with a cross-site resource at http://www.facebook.com/ was set without the `SameSite` attribute. A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032.",
-                "timestamp": 1582540217258,
+                "timestamp": 1584264385605,
                 "type": ""
             },
             {
                 "level": "WARNING",
                 "message": "https://www.topcoder-dev.com/ - A cookie associated with a cross-site resource at http://www.facebook.com/ was set without the `SameSite` attribute. A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032.",
-                "timestamp": 1582540222762,
+                "timestamp": 1584264392645,
+                "type": ""
+            },
+            {
+                "level": "WARNING",
+                "message": "https://static.hotjar.com/c/hotjar-133597.js?sv=6 2:1179 \"Hotjar not launching due to suspicious userAgent:\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/80.0.3987.132 Safari/537.36\"",
+                "timestamp": 1584264393070,
                 "type": ""
             },
             {
                 "level": "WARNING",
                 "message": "https://www.topcoder-dev.com/ - A cookie associated with a cross-site resource at http://ads.linkedin.com/ was set without the `SameSite` attribute. A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032.",
-                "timestamp": 1582540222770,
-                "type": ""
-            },
-            {
-                "level": "WARNING",
-                "message": "https://www.topcoder-dev.com/ - A cookie associated with a cross-site resource at http://vimeo.com/ was set without the `SameSite` attribute. A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032.",
-                "timestamp": 1582540223114,
-                "type": ""
-            },
-            {
-                "level": "SEVERE",
-                "message": "https://www.topcoder-dev.com/ - Access to font at 'https://www.topcoder.com/wp-content/themes/tc3-marketing/nav/font/barlow-condensed-v3-latin/barlow-condensed-v3-latin-600.woff2' from origin 'https://www.topcoder-dev.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
-                "timestamp": 1582540223195,
-                "type": ""
-            },
-            {
-                "level": "SEVERE",
-                "message": "https://www.topcoder.com/wp-content/themes/tc3-marketing/nav/font/barlow-condensed-v3-latin/barlow-condensed-v3-latin-600.woff2 - Failed to load resource: net::ERR_FAILED",
-                "timestamp": 1582540223195,
+                "timestamp": 1584264393453,
                 "type": ""
             },
             {
                 "level": "WARNING",
                 "message": "https://fast.trychameleon.com/messo/SAcpvabiB6Vsb9yZm32REVpDemzhOjyY6iznnOufjNlqyk-1DPhtq-A61ZuE9U5MrO1WGx/messo.min.js 0:3143 \"Chameleon Error: No \\\"Unique ID\\\" passed to Identify. The \\\"Unique ID\\\" informs Chameleon who this user is across sessions.\\n  Call chmln.identify(Unique ID, { user traits });\\n  See https://support.trychameleon.com/docs/getting-started for more information.\"",
-                "timestamp": 1582540223229,
+                "timestamp": 1584264393792,
+                "type": ""
+            },
+            {
+                "level": "SEVERE",
+                "message": "https://www.topcoder-dev.com/ - Access to font at 'https://www.topcoder.com/wp-content/themes/tc3-marketing/nav/font/barlow-condensed-v3-latin/barlow-condensed-v3-latin-600.woff2' from origin 'https://www.topcoder-dev.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+                "timestamp": 1584264393795,
+                "type": ""
+            },
+            {
+                "level": "SEVERE",
+                "message": "https://www.topcoder.com/wp-content/themes/tc3-marketing/nav/font/barlow-condensed-v3-latin/barlow-condensed-v3-latin-600.woff2 - Failed to load resource: net::ERR_FAILED",
+                "timestamp": 1584264393795,
+                "type": ""
+            },
+            {
+                "level": "WARNING",
+                "message": "https://www.topcoder-dev.com/ - A cookie associated with a cross-site resource at http://vimeo.com/ was set without the `SameSite` attribute. A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032.",
+                "timestamp": 1584264393941,
                 "type": ""
             },
             {
                 "level": "SEVERE",
                 "message": "https://www.topcoder-dev.com/ - Access to font at 'https://www.topcoder.com/wp-content/themes/tc3-marketing/nav/font/barlow-condensed-v3-latin/barlow-condensed-v3-latin-600.woff' from origin 'https://www.topcoder-dev.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
-                "timestamp": 1582540223519,
+                "timestamp": 1584264394181,
                 "type": ""
             },
             {
                 "level": "SEVERE",
                 "message": "https://www.topcoder.com/wp-content/themes/tc3-marketing/nav/font/barlow-condensed-v3-latin/barlow-condensed-v3-latin-600.woff - Failed to load resource: net::ERR_FAILED",
-                "timestamp": 1582540223519,
+                "timestamp": 1584264394182,
                 "type": ""
             },
             {
                 "level": "SEVERE",
                 "message": "https://www.topcoder-dev.com/ - Access to font at 'https://www.topcoder.com/wp-content/themes/tc3-marketing/nav/font/barlow-condensed-v3-latin/barlow-condensed-v3-latin-600.ttf' from origin 'https://www.topcoder-dev.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
-                "timestamp": 1582540223764,
+                "timestamp": 1584264394535,
                 "type": ""
             },
             {
                 "level": "SEVERE",
                 "message": "https://www.topcoder.com/wp-content/themes/tc3-marketing/nav/font/barlow-condensed-v3-latin/barlow-condensed-v3-latin-600.ttf - Failed to load resource: net::ERR_FAILED",
-                "timestamp": 1582540223764,
+                "timestamp": 1584264394535,
                 "type": ""
             },
             {
                 "level": "WARNING",
                 "message": "https://qa-community-app.topcoder-dev.com/settings/tools - A cookie associated with a cross-site resource at http://www.facebook.com/ was set without the `SameSite` attribute. A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032.",
-                "timestamp": 1582540228426,
+                "timestamp": 1584264402479,
+                "type": ""
+            },
+            {
+                "level": "WARNING",
+                "message": "https://qa-community-app.topcoder-dev.com/settings/tools - A cookie associated with a cross-site resource at http://www.facebook.com/ was set without the `SameSite` attribute. A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032.",
+                "timestamp": 1584264404090,
                 "type": ""
             }
         ],
-        "screenShotFile": "screenshots/003d0080-0038-007a-0051-00d2006c0091.png",
-        "timestamp": 1582540225778,
-        "duration": 21493
+        "screenShotFile": "screenshots/00e7001a-00e7-00a6-0006-00d800a500a6.png",
+        "timestamp": 1584264398344,
+        "duration": 25931
     }
 ];
 

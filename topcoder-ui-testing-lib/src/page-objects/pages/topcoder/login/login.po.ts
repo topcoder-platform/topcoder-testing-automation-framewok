@@ -1,17 +1,28 @@
 import { browser, by, element, protractor } from "protractor";
 import * as appconfig from "../../../../../app-config.json";
 import { logger } from "../../../../../logger/logger";
-import { ConfigHelper } from "../../../../utils/config-helper.js";
 import { ElementHelper } from "../../../../utils/element-helper";
 import { HomePage } from "../home-page/home.po.js";
 import { LoginPageConstants } from "./login.constants";
 
 export class LoginPage {
+  public loginUrl;
+  public homePageUrl;
+  public logoutUrl;
+
+  /**
+   * Set Urls
+   */
+  public async setUrls(urlObject) {
+    this.loginUrl = urlObject.loginUrl;
+    this.homePageUrl = urlObject.homePageUrl;
+    this.logoutUrl = urlObject.logoutUrl;
+  }
   /**
    * Get login page
    */
   public async get() {
-    await browser.get(LoginPageConstants.url);
+    await browser.get(this.loginUrl);
     await logger.info("User navigated to Topcoder Login Page");
   }
 
@@ -55,7 +66,7 @@ export class LoginPage {
    */
   public async logout() {
     browser.ignoreSynchronization = true;
-    await browser.get(ConfigHelper.getLogoutURL());
+    await browser.get(this.logoutUrl);
     await logger.info("user logged out");
   }
 

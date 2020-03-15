@@ -1,13 +1,4 @@
-import { ConfigHelper } from "../../../../utils/config-helper";
-
 export class LoginPageConstants {
-  /**
-   * Get login URL
-   */
-  static get url() {
-    return ConfigHelper.getLoginURL();
-  }
-
   /**
    * Error messages
    */

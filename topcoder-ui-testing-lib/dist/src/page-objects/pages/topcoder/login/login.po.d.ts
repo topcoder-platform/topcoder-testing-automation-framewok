@@ -1,5 +1,12 @@
 import { HomePage } from "../home-page/home.po.js";
 export declare class LoginPage {
+    loginUrl: any;
+    homePageUrl: any;
+    logoutUrl: any;
+    /**
+     * Set Urls
+     */
+    setUrls(urlObject: any): Promise<void>;
     /**
      * Get login page
      */

@@ -31,8 +31,8 @@ exports.config = {
   framework: "jasmine2",
 
   specs: [
-    "../temp/test-suites/smoke/tc-login.spec.js",
-    "../temp/test-suites/smoke/tc-tools.spec.js"
+    "../temp/test-suites/tc-login.spec.js",
+    "../temp/test-suites/tc-tools.spec.js"
   ],
 
   // Options to be passed to Jasmine.

@@ -1,6 +1,5 @@
 import { logger } from "../../../../../logger/logger";
 import { CommonHelper } from "../../../../utils/common-helper";
-import { ConfigHelper } from "../../../../utils/config-helper";
 import { HomePageHelper } from "../home-page/home.helper";
 import { LoginPageConstants } from "./login.constants";
 import { LoginPage } from "./login.po";
@@ -20,10 +19,12 @@ export class LoginPageHelper {
    * @param {String} password
    */
   public static async login(username: string, password: string) {
-    await CommonHelper.verifyCurrentUrl(ConfigHelper.getLoginURL());
+    await CommonHelper.verifyCurrentUrl(this.loginPageObject.loginUrl);
     await this.loginPageObject.waitForLoginForm();
     await this.loginPageObject.fillLoginForm(username, password);
     const homepage = await this.loginPageObject.waitForHomePage();
+    const homePageUrl = this.loginPageObject.homePageUrl;
+    await homepage.setUrls({ homePageUrl });
     HomePageHelper.setHomePage(homepage);
     await HomePageHelper.verifyHomePage();
   }
@@ -70,6 +71,8 @@ export class LoginPageHelper {
   public static async logout() {
     this.loginPageObject.logout();
     const homepage = await this.loginPageObject.waitForHomePage();
+    const homePageUrl = this.loginPageObject.homePageUrl;
+    homepage.setUrls({ homePageUrl });
     HomePageHelper.setHomePage(homepage);
     await HomePageHelper.verifyHomePage();
   }
