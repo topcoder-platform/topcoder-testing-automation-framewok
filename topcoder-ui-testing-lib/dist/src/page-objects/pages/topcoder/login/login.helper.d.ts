@@ -1,3 +1,4 @@
+import { HomePage } from "../home-page/home.po";
 export declare class LoginPageHelper {
     /**
      * Set the page object
@@ -26,5 +27,10 @@ export declare class LoginPageHelper {
      * Logout
      */
     static logout(): Promise<void>;
+    /**
+     * Verify the current page is the home page
+     * @param {HomePage} homePage
+     */
+    static verifyHomePage(homePage: HomePage): Promise<void>;
     private static loginPageObject;
 }

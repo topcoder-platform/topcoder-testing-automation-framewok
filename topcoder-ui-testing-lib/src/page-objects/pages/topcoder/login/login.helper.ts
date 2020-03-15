@@ -1,6 +1,7 @@
+import { browser, protractor } from "protractor";
 import { logger } from "../../../../../logger/logger";
 import { CommonHelper } from "../../../../utils/common-helper";
-import { HomePageHelper } from "../home-page/home.helper";
+import { HomePage } from "../home-page/home.po";
 import { LoginPageConstants } from "./login.constants";
 import { LoginPage } from "./login.po";
 
@@ -22,11 +23,8 @@ export class LoginPageHelper {
     await CommonHelper.verifyCurrentUrl(this.loginPageObject.loginUrl);
     await this.loginPageObject.waitForLoginForm();
     await this.loginPageObject.fillLoginForm(username, password);
-    const homepage = await this.loginPageObject.waitForHomePage();
-    const homePageUrl = this.loginPageObject.homePageUrl;
-    await homepage.setUrls({ homePageUrl });
-    HomePageHelper.setHomePage(homepage);
-    await HomePageHelper.verifyHomePage();
+    const homePage = await this.loginPageObject.waitForHomePage();
+    await this.verifyHomePage(homePage);
   }
 
   /**
@@ -70,11 +68,19 @@ export class LoginPageHelper {
    */
   public static async logout() {
     this.loginPageObject.logout();
-    const homepage = await this.loginPageObject.waitForHomePage();
-    const homePageUrl = this.loginPageObject.homePageUrl;
-    homepage.setUrls({ homePageUrl });
-    HomePageHelper.setHomePage(homepage);
-    await HomePageHelper.verifyHomePage();
+    const homePage = await this.loginPageObject.waitForHomePage();
+    await this.verifyHomePage(homePage);
+  }
+
+  /**
+   * Verify the current page is the home page
+   * @param {HomePage} homePage
+   */
+  public static async verifyHomePage(homePage: HomePage) {
+    const until = protractor.ExpectedConditions;
+    await browser.wait(until.visibilityOf(homePage.container));
+    CommonHelper.verifyCurrentUrl(this.loginPageObject.homePageUrl);
+    logger.info("User redirected to home-page");
   }
 
   private static loginPageObject;

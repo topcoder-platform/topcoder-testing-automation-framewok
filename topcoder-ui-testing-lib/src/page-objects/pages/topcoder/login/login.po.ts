@@ -3,7 +3,6 @@ import * as appconfig from "../../../../../app-config.json";
 import { logger } from "../../../../../logger/logger";
 import { ElementHelper } from "../../../../utils/element-helper";
 import { HomePage } from "../home-page/home.po.js";
-import { LoginPageConstants } from "./login.constants";
 
 export class LoginPage {
   public loginUrl;

@@ -35,9 +35,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var protractor_1 = require("protractor");
 var logger_1 = require("../../../../../logger/logger");
 var common_helper_1 = require("../../../../utils/common-helper");
-var home_helper_1 = require("../home-page/home.helper");
 var login_constants_1 = require("./login.constants");
 var LoginPageHelper = /** @class */ (function () {
     function LoginPageHelper() {
@@ -56,7 +56,7 @@ var LoginPageHelper = /** @class */ (function () {
      */
     LoginPageHelper.login = function (username, password) {
         return __awaiter(this, void 0, void 0, function () {
-            var homepage, homePageUrl;
+            var homePage;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, common_helper_1.CommonHelper.verifyCurrentUrl(this.loginPageObject.loginUrl)];
@@ -70,14 +70,9 @@ var LoginPageHelper = /** @class */ (function () {
                         _a.sent();
                         return [4 /*yield*/, this.loginPageObject.waitForHomePage()];
                     case 4:
-                        homepage = _a.sent();
-                        homePageUrl = this.loginPageObject.homePageUrl;
-                        return [4 /*yield*/, homepage.setUrls({ homePageUrl: homePageUrl })];
+                        homePage = _a.sent();
+                        return [4 /*yield*/, this.verifyHomePage(homePage)];
                     case 5:
-                        _a.sent();
-                        home_helper_1.HomePageHelper.setHomePage(homepage);
-                        return [4 /*yield*/, home_helper_1.HomePageHelper.verifyHomePage()];
-                    case 6:
                         _a.sent();
                         return [2 /*return*/];
                 }
@@ -147,20 +142,38 @@ var LoginPageHelper = /** @class */ (function () {
      */
     LoginPageHelper.logout = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var homepage, homePageUrl;
+            var homePage;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         this.loginPageObject.logout();
                         return [4 /*yield*/, this.loginPageObject.waitForHomePage()];
                     case 1:
-                        homepage = _a.sent();
-                        homePageUrl = this.loginPageObject.homePageUrl;
-                        homepage.setUrls({ homePageUrl: homePageUrl });
-                        home_helper_1.HomePageHelper.setHomePage(homepage);
-                        return [4 /*yield*/, home_helper_1.HomePageHelper.verifyHomePage()];
+                        homePage = _a.sent();
+                        return [4 /*yield*/, this.verifyHomePage(homePage)];
                     case 2:
                         _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Verify the current page is the home page
+     * @param {HomePage} homePage
+     */
+    LoginPageHelper.verifyHomePage = function (homePage) {
+        return __awaiter(this, void 0, void 0, function () {
+            var until;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        until = protractor_1.protractor.ExpectedConditions;
+                        return [4 /*yield*/, protractor_1.browser.wait(until.visibilityOf(homePage.container))];
+                    case 1:
+                        _a.sent();
+                        common_helper_1.CommonHelper.verifyCurrentUrl(this.loginPageObject.homePageUrl);
+                        logger_1.logger.info("User redirected to home-page");
                         return [2 /*return*/];
                 }
             });
@@ -169,4 +182,4 @@ var LoginPageHelper = /** @class */ (function () {
     return LoginPageHelper;
 }());
 exports.LoginPageHelper = LoginPageHelper;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibG9naW4uaGVscGVyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vLi4vc3JjL3BhZ2Utb2JqZWN0cy9wYWdlcy90b3Bjb2Rlci9sb2dpbi9sb2dpbi5oZWxwZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLHVEQUFzRDtBQUN0RCxpRUFBK0Q7QUFDL0Qsd0RBQTBEO0FBQzFELHFEQUF1RDtBQUd2RDtJQUFBO0lBMEVBLENBQUM7SUF6RUM7OztPQUdHO0lBQ1csNEJBQVksR0FBMUIsVUFBMkIsU0FBUztRQUNsQyxJQUFJLENBQUMsZUFBZSxHQUFHLFNBQVMsQ0FBQztJQUNuQyxDQUFDO0lBRUQ7Ozs7T0FJRztJQUNpQixxQkFBSyxHQUF6QixVQUEwQixRQUFnQixFQUFFLFFBQWdCOzs7Ozs0QkFDMUQscUJBQU0sNEJBQVksQ0FBQyxnQkFBZ0IsQ0FBQyxJQUFJLENBQUMsZUFBZSxDQUFDLFFBQVEsQ0FBQyxFQUFBOzt3QkFBbEUsU0FBa0UsQ0FBQzt3QkFDbkUscUJBQU0sSUFBSSxDQUFDLGVBQWUsQ0FBQyxnQkFBZ0IsRUFBRSxFQUFBOzt3QkFBN0MsU0FBNkMsQ0FBQzt3QkFDOUMscUJBQU0sSUFBSSxDQUFDLGVBQWUsQ0FBQyxhQUFhLENBQUMsUUFBUSxFQUFFLFFBQVEsQ0FBQyxFQUFBOzt3QkFBNUQsU0FBNEQsQ0FBQzt3QkFDNUMscUJBQU0sSUFBSSxDQUFDLGVBQWUsQ0FBQyxlQUFlLEVBQUUsRUFBQTs7d0JBQXZELFFBQVEsR0FBRyxTQUE0Qzt3QkFDdkQsV0FBVyxHQUFHLElBQUksQ0FBQyxlQUFlLENBQUMsV0FBVyxDQUFDO3dCQUNyRCxxQkFBTSxRQUFRLENBQUMsT0FBTyxDQUFDLEVBQUUsV0FBVyxhQUFBLEVBQUUsQ0FBQyxFQUFBOzt3QkFBdkMsU0FBdUMsQ0FBQzt3QkFDeEMsNEJBQWMsQ0FBQyxXQUFXLENBQUMsUUFBUSxDQUFDLENBQUM7d0JBQ3JDLHFCQUFNLDRCQUFjLENBQUMsY0FBYyxFQUFFLEVBQUE7O3dCQUFyQyxTQUFxQyxDQUFDOzs7OztLQUN2QztJQUVEOzs7O09BSUc7SUFDaUIsd0NBQXdCLEdBQTVDLFVBQ0UsZUFBdUIsRUFDdkIsUUFBZ0I7Ozs7OzRCQUVoQixxQkFBTSxJQUFJLENBQUMsZUFBZSxDQUFDLGdCQUFnQixFQUFFLEVBQUE7O3dCQUE3QyxTQUE2QyxDQUFDO3dCQUM5QyxxQkFBTSxJQUFJLENBQUMsZUFBZSxDQUFDLGFBQWEsQ0FBQyxlQUFlLEVBQUUsUUFBUSxDQUFDLEVBQUE7O3dCQUFuRSxTQUFtRSxDQUFDO3dCQUNwRSxxQkFBTSxJQUFJLENBQUMsZUFBZSxDQUFDLG1CQUFtQixFQUFFLEVBQUE7O3dCQUFoRCxTQUFnRCxDQUFDO3dCQUNqRCxLQUFBLE1BQU0sQ0FBQTt3QkFBQyxxQkFBTSxJQUFJLENBQUMsZUFBZSxDQUFDLFlBQVksQ0FBQyxPQUFPLEVBQUUsRUFBQTs7d0JBQXhELGtCQUFPLFNBQWlELEVBQUMsQ0FBQyxPQUFPLENBQy9ELG9DQUFrQixDQUFDLE1BQU0sQ0FBQyxnQkFBZ0IsQ0FDM0MsQ0FBQzt3QkFDRixlQUFNLENBQUMsSUFBSSxDQUFDLGtDQUFrQyxDQUFDLENBQUM7Ozs7O0tBQ2pEO0lBRUQ7Ozs7T0FJRztJQUNpQix3Q0FBd0IsR0FBNUMsVUFDRSxRQUFnQixFQUNoQixlQUF1Qjs7Ozs7NEJBRXZCLHFCQUFNLElBQUksQ0FBQyxlQUFlLENBQUMsZ0JBQWdCLEVBQUUsRUFBQTs7d0JBQTdDLFNBQTZDLENBQUM7d0JBQzlDLHFCQUFNLElBQUksQ0FBQyxlQUFlLENBQUMsYUFBYSxDQUFDLFFBQVEsRUFBRSxlQUFlLENBQUMsRUFBQTs7d0JBQW5FLFNBQW1FLENBQUM7d0JBQ3BFLHFCQUFNLElBQUksQ0FBQyxlQUFlLENBQUMsbUJBQW1CLEVBQUUsRUFBQTs7d0JBQWhELFNBQWdELENBQUM7d0JBQ2pELEtBQUEsTUFBTSxDQUFBO3dCQUFDLHFCQUFNLElBQUksQ0FBQyxlQUFlLENBQUMsWUFBWSxDQUFDLE9BQU8sRUFBRSxFQUFBOzt3QkFBeEQsa0JBQU8sU0FBaUQsRUFBQyxDQUFDLE9BQU8sQ0FDL0Qsb0NBQWtCLENBQUMsTUFBTSxDQUFDLGVBQWUsQ0FDMUMsQ0FBQzt3QkFDRixlQUFNLENBQUMsSUFBSSxDQUFDLDBDQUEwQyxDQUFDLENBQUM7Ozs7O0tBQ3pEO0lBRUQ7O09BRUc7SUFDaUIsc0JBQU0sR0FBMUI7Ozs7Ozt3QkFDRSxJQUFJLENBQUMsZUFBZSxDQUFDLE1BQU0sRUFBRSxDQUFDO3dCQUNiLHFCQUFNLElBQUksQ0FBQyxlQUFlLENBQUMsZUFBZSxFQUFFLEVBQUE7O3dCQUF2RCxRQUFRLEdBQUcsU0FBNEM7d0JBQ3ZELFdBQVcsR0FBRyxJQUFJLENBQUMsZUFBZSxDQUFDLFdBQVcsQ0FBQzt3QkFDckQsUUFBUSxDQUFDLE9BQU8sQ0FBQyxFQUFFLFdBQVcsYUFBQSxFQUFFLENBQUMsQ0FBQzt3QkFDbEMsNEJBQWMsQ0FBQyxXQUFXLENBQUMsUUFBUSxDQUFDLENBQUM7d0JBQ3JDLHFCQUFNLDRCQUFjLENBQUMsY0FBYyxFQUFFLEVBQUE7O3dCQUFyQyxTQUFxQyxDQUFDOzs7OztLQUN2QztJQUdILHNCQUFDO0FBQUQsQ0FBQyxBQTFFRCxJQTBFQztBQTFFWSwwQ0FBZSJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibG9naW4uaGVscGVyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vLi4vc3JjL3BhZ2Utb2JqZWN0cy9wYWdlcy90b3Bjb2Rlci9sb2dpbi9sb2dpbi5oZWxwZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLHlDQUFpRDtBQUNqRCx1REFBc0Q7QUFDdEQsaUVBQStEO0FBRS9ELHFEQUF1RDtBQUd2RDtJQUFBO0lBK0VBLENBQUM7SUE5RUM7OztPQUdHO0lBQ1csNEJBQVksR0FBMUIsVUFBMkIsU0FBUztRQUNsQyxJQUFJLENBQUMsZUFBZSxHQUFHLFNBQVMsQ0FBQztJQUNuQyxDQUFDO0lBRUQ7Ozs7T0FJRztJQUNpQixxQkFBSyxHQUF6QixVQUEwQixRQUFnQixFQUFFLFFBQWdCOzs7Ozs0QkFDMUQscUJBQU0sNEJBQVksQ0FBQyxnQkFBZ0IsQ0FBQyxJQUFJLENBQUMsZUFBZSxDQUFDLFFBQVEsQ0FBQyxFQUFBOzt3QkFBbEUsU0FBa0UsQ0FBQzt3QkFDbkUscUJBQU0sSUFBSSxDQUFDLGVBQWUsQ0FBQyxnQkFBZ0IsRUFBRSxFQUFBOzt3QkFBN0MsU0FBNkMsQ0FBQzt3QkFDOUMscUJBQU0sSUFBSSxDQUFDLGVBQWUsQ0FBQyxhQUFhLENBQUMsUUFBUSxFQUFFLFFBQVEsQ0FBQyxFQUFBOzt3QkFBNUQsU0FBNEQsQ0FBQzt3QkFDNUMscUJBQU0sSUFBSSxDQUFDLGVBQWUsQ0FBQyxlQUFlLEVBQUUsRUFBQTs7d0JBQXZELFFBQVEsR0FBRyxTQUE0Qzt3QkFDN0QscUJBQU0sSUFBSSxDQUFDLGNBQWMsQ0FBQyxRQUFRLENBQUMsRUFBQTs7d0JBQW5DLFNBQW1DLENBQUM7Ozs7O0tBQ3JDO0lBRUQ7Ozs7T0FJRztJQUNpQix3Q0FBd0IsR0FBNUMsVUFDRSxlQUF1QixFQUN2QixRQUFnQjs7Ozs7NEJBRWhCLHFCQUFNLElBQUksQ0FBQyxlQUFlLENBQUMsZ0JBQWdCLEVBQUUsRUFBQTs7d0JBQTdDLFNBQTZDLENBQUM7d0JBQzlDLHFCQUFNLElBQUksQ0FBQyxlQUFlLENBQUMsYUFBYSxDQUFDLGVBQWUsRUFBRSxRQUFRLENBQUMsRUFBQTs7d0JBQW5FLFNBQW1FLENBQUM7d0JBQ3BFLHFCQUFNLElBQUksQ0FBQyxlQUFlLENBQUMsbUJBQW1CLEVBQUUsRUFBQTs7d0JBQWhELFNBQWdELENBQUM7d0JBQ2pELEtBQUEsTUFBTSxDQUFBO3dCQUFDLHFCQUFNLElBQUksQ0FBQyxlQUFlLENBQUMsWUFBWSxDQUFDLE9BQU8sRUFBRSxFQUFBOzt3QkFBeEQsa0JBQU8sU0FBaUQsRUFBQyxDQUFDLE9BQU8sQ0FDL0Qsb0NBQWtCLENBQUMsTUFBTSxDQUFDLGdCQUFnQixDQUMzQyxDQUFDO3dCQUNGLGVBQU0sQ0FBQyxJQUFJLENBQUMsa0NBQWtDLENBQUMsQ0FBQzs7Ozs7S0FDakQ7SUFFRDs7OztPQUlHO0lBQ2lCLHdDQUF3QixHQUE1QyxVQUNFLFFBQWdCLEVBQ2hCLGVBQXVCOzs7Ozs0QkFFdkIscUJBQU0sSUFBSSxDQUFDLGVBQWUsQ0FBQyxnQkFBZ0IsRUFBRSxFQUFBOzt3QkFBN0MsU0FBNkMsQ0FBQzt3QkFDOUMscUJBQU0sSUFBSSxDQUFDLGVBQWUsQ0FBQyxhQUFhLENBQUMsUUFBUSxFQUFFLGVBQWUsQ0FBQyxFQUFBOzt3QkFBbkUsU0FBbUUsQ0FBQzt3QkFDcEUscUJBQU0sSUFBSSxDQUFDLGVBQWUsQ0FBQyxtQkFBbUIsRUFBRSxFQUFBOzt3QkFBaEQsU0FBZ0QsQ0FBQzt3QkFDakQsS0FBQSxNQUFNLENBQUE7d0JBQUMscUJBQU0sSUFBSSxDQUFDLGVBQWUsQ0FBQyxZQUFZLENBQUMsT0FBTyxFQUFFLEVBQUE7O3dCQUF4RCxrQkFBTyxTQUFpRCxFQUFDLENBQUMsT0FBTyxDQUMvRCxvQ0FBa0IsQ0FBQyxNQUFNLENBQUMsZUFBZSxDQUMxQyxDQUFDO3dCQUNGLGVBQU0sQ0FBQyxJQUFJLENBQUMsMENBQTBDLENBQUMsQ0FBQzs7Ozs7S0FDekQ7SUFFRDs7T0FFRztJQUNpQixzQkFBTSxHQUExQjs7Ozs7O3dCQUNFLElBQUksQ0FBQyxlQUFlLENBQUMsTUFBTSxFQUFFLENBQUM7d0JBQ2IscUJBQU0sSUFBSSxDQUFDLGVBQWUsQ0FBQyxlQUFlLEVBQUUsRUFBQTs7d0JBQXZELFFBQVEsR0FBRyxTQUE0Qzt3QkFDN0QscUJBQU0sSUFBSSxDQUFDLGNBQWMsQ0FBQyxRQUFRLENBQUMsRUFBQTs7d0JBQW5DLFNBQW1DLENBQUM7Ozs7O0tBQ3JDO0lBRUQ7OztPQUdHO0lBQ2lCLDhCQUFjLEdBQWxDLFVBQW1DLFFBQWtCOzs7Ozs7d0JBQzdDLEtBQUssR0FBRyx1QkFBVSxDQUFDLGtCQUFrQixDQUFDO3dCQUM1QyxxQkFBTSxvQkFBTyxDQUFDLElBQUksQ0FBQyxLQUFLLENBQUMsWUFBWSxDQUFDLFFBQVEsQ0FBQyxTQUFTLENBQUMsQ0FBQyxFQUFBOzt3QkFBMUQsU0FBMEQsQ0FBQzt3QkFDM0QsNEJBQVksQ0FBQyxnQkFBZ0IsQ0FBQyxJQUFJLENBQUMsZUFBZSxDQUFDLFdBQVcsQ0FBQyxDQUFDO3dCQUNoRSxlQUFNLENBQUMsSUFBSSxDQUFDLDhCQUE4QixDQUFDLENBQUM7Ozs7O0tBQzdDO0lBR0gsc0JBQUM7QUFBRCxDQUFDLEFBL0VELElBK0VDO0FBL0VZLDBDQUFlIn0=

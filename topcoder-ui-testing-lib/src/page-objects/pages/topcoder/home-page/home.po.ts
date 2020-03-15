@@ -16,12 +16,4 @@ export class HomePage {
   public get container() {
     return ElementHelper.getElementByClassName("home-top-wrapper");
   }
-
-  /**
-   * Gets the home page
-   */
-  public async get() {
-    await browser.get(this.homePageUrl);
-    logger.info("User navigated to Home Page");
-  }
 }
